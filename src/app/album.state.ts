@@ -54,7 +54,7 @@ export class AlbsState {
   @Action(AlbumActions.Create)
   CreateAlbum(ctx: StateContext<AlbsStateModel>, action: AlbumActions.Create) {
         callAPI("POST", "/albums", action.album ).then((data)=>{
-          if (data.status!=200){
+          if ((data.status<200) && (data.status>299)){
             console.log("Error caught!!")
           } else {
             ctx.patchState({albums:[data ,...ctx.getState().albums]});
@@ -64,7 +64,7 @@ export class AlbsState {
   @Action(AlbumActions.Update)
   UpdateAlbum(ctx: StateContext<AlbsStateModel>, action: AlbumActions.Update) {
         callAPI("PUT", "/albums/"+action.album.id.toString(), action.album ).then((data)=>{
-          if (data.status!=200){
+          if ((data.status<200) && (data.status>299)){
             console.log("Error caught!!")
           } else {
             let albums =  ctx.getState().albums.map(album=>{
