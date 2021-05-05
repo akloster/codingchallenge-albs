@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>Add new album</h2>
+<mat-dialog-content>
+  <mat-form-field appearance="standard">
+    <mat-label>Released in</mat-label>
+    <input #released_in matInput type="number" placeholder="Year">
+    <mat-hint>Year</mat-hint>
+</mat-form-field>
+ <br>
+  <mat-form-field appearance="standard">
+    <mat-label>Artist</mat-label>
+    <input #artist matInput type="text" placeholder="Placeholder">
+    <mat-hint></mat-hint>
+    <br>
+</mat-form-field>
+
+  <mat-form-field appearance="standard">
+    <mat-label>Title</mat-label>
+    <input #title matInput type="text" placeholder="Placeholder">
+    <mat-hint></mat-hint>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancel</button>
+  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+  <button mat-button [mat-dialog-close]="getResult()">Add</button>
+</mat-dialog-actions>

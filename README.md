@@ -1,5 +1,11 @@
 # Albs
 
+This is very simple angular application I had to build as a coding challenge as part of a job interview.
+
+The task was to create a simple one-page application to manage audio albums (with title, artist name and release year).
+
+It interfaces with a REST API that was hosted at heroku at the time of this writing and may or may not still be available.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11.
 
 ## Development server
